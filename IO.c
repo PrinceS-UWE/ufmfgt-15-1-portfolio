@@ -11,12 +11,17 @@
 
 
 /*
+ * Load_csv uses a two-pass approach. First it counts the amount of rows
+ * needed for malloc(memory allocate) to get the exact size
+ *Finally it reads the data into the allocated array which
+ * in this case is Waveform sample
    loading the CSV
    Opens the file
    Counts the number of data rows
    Back to the start
    Skip the header line
  */
+
 WaveformSample *load_csv(const char *filename, int *count) {
     FILE *fp = fopen(filename, "r");
     if (fp == NULL) {
