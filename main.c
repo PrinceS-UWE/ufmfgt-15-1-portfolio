@@ -21,43 +21,26 @@ int main(int argc, char *argv[]) {
     const char *input_file  = argv[1];
     const char *output_file = "results.txt";
 
-    printf("Step 1:Looking for :%s\n",input_file);
-    fflush(stdout);
 
     int sample_count = 0;
     WaveformSample *samples = load_csv(input_file, &sample_count);
 
     if (samples == NULL) {
-        printf("Step 1 Failed:Cant Load CSV\n");
-        fflush(stdout);
-        getchar();
         return 1;
     }
 
-    printf("Step 2:Loaded %d samples from '%s'\n", sample_count, input_file);
-    fflush(stdout);
-
-    printf("debug-first sample: timestamp=%.4f, PhaseA=%.4f\n",
-           samples[0].timestamp, samples[0].phase_A_voltage);
-    fflush(stdout);
-
+    printf("Loaded %d samples from '%s'\n", sample_count, input_file);
 
     PhaseResult results[3];
     analyse_all_phases(samples, sample_count, results);
 
-    printf("Step 3: Completed Analysis\n");
-    fflush(stdout);
-
     write_results(output_file, results);
 
-    printf("Step 4:Done! Check results.txt\n");
-    fflush(stdout);
-
+    printf("Done! Check results.txt\n");
 
     free(samples);
     samples = NULL;
 
-    getchar();
     return 0;
 
 }
