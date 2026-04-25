@@ -8,6 +8,11 @@ double get_phase_voltage(WaveformSample *samples,int field){
     return samples->phase_C_voltage;
 }
 
+/*RMS = sqrt( (1/n) * sum(v^2))
+ * we square the RMS to remove any negatives
+ * we use the mean to get the average power
+ * then we square root coverts back to voltage */
+
 double compute_rms(WaveformSample *samples, int n, int field){
     double sum_sq=0.0;
     for (int i=0; i<n ;i++){
