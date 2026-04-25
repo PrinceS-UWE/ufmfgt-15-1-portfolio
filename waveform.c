@@ -44,7 +44,7 @@ int detect_clipping(WaveformSample *samples, int n , int field){
 
     while (ptr <end){
         double v= get_phase_voltage(ptr, field);
-        if (v>= 324 || v <=-324.9){
+        if (v>= 324.9 || v <=-324.9){
             count++;
         }
         ptr++;
