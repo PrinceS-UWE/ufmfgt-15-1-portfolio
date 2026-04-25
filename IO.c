@@ -1,3 +1,10 @@
+/*
+* Filename: IO.c
+* Author: [Prince Sherwood]
+* Date: [31/03/26]
+* Description: My first C Mini Coursework program for UFMFGT-15-1.
+*/
+
 #include "IO.h"
 #include <stdio.h>
 #include <stdlib.h>
