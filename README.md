@@ -13,11 +13,37 @@ Reads a CSV file of 1000 power grid samples and calculates:
 The results are then put into a txt file called Results.txt
 
 ##File Structure
-| File          | Purpose |
-|---------------|---|
-| main.c        | Entry point, handles arguments and program flow
-| waveform.c/.h | Voltage analysis function|
-|IO.c/.h | CSV loading and writes the results to the text file|
-|CMakeLists.txt | Build Configuration |
-|README.md | This file |
+| File           | Purpose                                             |
+|----------------|-----------------------------------------------------|
+| main.c         | Entry point, handles arguments and program flow     |
+| waveform.c/.h  | Voltage analysis function                           |
+| IO.c/.h        | CSV loading and writes the results to the text file |
+| CMakeLists.txt | Build Configuration                                 |
+| README.md      | This file                                           |
 
+##How to run Program from Github
+
+- Clone Repository from github link(On github repository page, click 
+code then clone using URL or Github integration)
+- Open CLion
+- Go to File > Open > Choose the cloned folder
+- Copy the power_quality_log.csv file to the cmake-build-debug folder
+- Set the program arguments > Run > Edit configuration , 
+change program argument to power_quality_log.csv
+- Set working directory to your cmake-build-debug folder e.g C: \Users \username 
+\CLionProjects \program folder \cmake-build-debug and click Ok
+- Click run button , output will be shown on console and results will be written to
+results.txt in cmake-build-debug 
+
+##How to run Program from ZipFile
+- Download zip file from repository
+- Extract the file to desired location
+- Open CLion 
+- Go to File > Open > Select extracted Folder
+- Set Program Arguments > Run > Edit Configuration
+- Set program argument to power_quality_log.csv
+- Set working directory to your cmake-build-debug folder
+-  Click run button , output will be shown on console and results will be written to
+   results.txt in cmake-build-debug
+
+github: https://github.com/PrinceS-UWE/ufmfgt-15-1-portfolio
